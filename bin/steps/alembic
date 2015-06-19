@@ -1,0 +1,4 @@
+# Migrate database with Alembic.
+puts-step "Migrating database with Alembic to HEAD"
+
+/app/.heroku/python/bin/alembic upgrade HEAD

@@ -178,6 +178,9 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
+# Migrate database with Alembic.
+source $BIN_DIR/steps/alembic
+
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
 
