@@ -17,23 +17,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-# Export application environment variables.
-export_env_dir() {
-  whitelist_regex=${2:-'^(DATABASE_URL)$'}
-  blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
-  if [ -d "$env_dir" ]; then
-    for e in $(ls $ENV_DIR); do
-      echo "$e" | grep -E "$whitelist_regex" | grep -qvE "$blacklist_regex" &&
-      export "$e=$(cat $env_dir/$e)"
-      :
-    done
-  fi
-}
-
-export_env_dir
-
-# Debug. Remove later.
-echo $DATABASE_URL
+# Setup Alembic database connection URI.
+export SQLALCHEMY_DATABASE_URI=$(cat $ENV_DIR/DATABASE_URL)
 
 
 CACHED_DIRS=".heroku"
