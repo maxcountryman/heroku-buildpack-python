@@ -19,7 +19,7 @@ ENV_DIR=$3
 
 # Export application environment variables.
 export_env_dir() {
-  whitelist_regex=${2:-''}
+  whitelist_regex=${2:-'^(DATABASE_URL)'}
   blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
   if [ -d "$env_dir" ]; then
     for e in $(ls $ENV_DIR); do
