@@ -18,7 +18,8 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 # Setup Alembic database connection URI.
-export SQLALCHEMY_DATABASE_URI=$(cat $ENV_DIR/DATABASE_URL)
+export DATABASE_URL=$(cat $ENV_DIR/DATABASE_URL)
+export SQLALCHEMY_DATABASE_URI=$DATABASE_URL
 
 
 CACHED_DIRS=".heroku"
