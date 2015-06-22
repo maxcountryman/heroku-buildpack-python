@@ -32,6 +32,9 @@ export_env_dir() {
 
 export_env_dir
 
+# Debug. Remove later.
+echo $DATABASE_URL
+
 
 CACHED_DIRS=".heroku"
 
