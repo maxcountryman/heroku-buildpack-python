@@ -185,6 +185,9 @@ source $BIN_DIR/steps/pip-install
 # Migrate database with Alembic.
 source $BIN_DIR/steps/alembic
 
+# Generate documentation.
+source $BIN_DIR/steps/sphinx
+
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
 
