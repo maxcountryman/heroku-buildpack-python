@@ -3,3 +3,4 @@ puts-step "Generating Sphinx documentation"
 
 cd docs
 make html
+cd ..
