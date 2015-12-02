@@ -1,6 +1,6 @@
 # Generate documentation via Sphinx.
-puts-step "Generating Sphinx documentation"
 
 if hash sphinx-quickstart 2>/dev/null; then
+    puts-step "Generating Sphinx documentation"
     make -C docs/ html
 fi
